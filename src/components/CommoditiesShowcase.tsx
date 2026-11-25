@@ -25,7 +25,7 @@ export default function CommoditiesShowcase({
       category: "rice",
       name: "Sona Masoori Raw / Steam Rice",
       variety: "BPT 5204 / RNR 15048 Standard Grade",
-      image: "/commodities/rice-sona-masoori.jpg",
+      image: "/commodities/rice-sona-masoori.png?v=2",
       packaging: "25 kg & 50 kg PP Bags",
       minOrder: "5 Quintals (500 kg)",
       origin: "Kurnool & Krishna Delta",
@@ -34,7 +34,7 @@ export default function CommoditiesShowcase({
       category: "rice",
       name: "Telangana Sona (RNR 15048) Low-GI",
       variety: "Special Commercial Mill Grade",
-      image: "/commodities/rice-telangana-sona.jpg",
+      image: "/commodities/rice-telangana-sona.jpg?v=2",
       packaging: "25 kg & 50 kg Brandless Sacks",
       minOrder: "5 Quintals (500 kg)",
       origin: "Telangana Agro Clusters",
@@ -43,7 +43,7 @@ export default function CommoditiesShowcase({
       category: "pulses",
       name: "Desi Toor Dal (Phatka / Unpolished)",
       variety: "Commercial Grade-A Sortex Cleaned",
-      image: "/commodities/toor-dal.jpg",
+      image: "/commodities/toor-dal.png?v=2",
       packaging: "30 kg & 50 kg Sacks",
       minOrder: "3 Quintals (300 kg)",
       origin: "Gulbarga & Latur Mills",
@@ -52,7 +52,7 @@ export default function CommoditiesShowcase({
       category: "pulses",
       name: "Urad Dal Gota (Whole White)",
       variety: "First Grade Machine Cleaned",
-      image: "/commodities/urad-dal.jpg",
+      image: "/commodities/urad-dal.png?v=2",
       packaging: "30 kg & 50 kg Bulk Bags",
       minOrder: "3 Quintals (300 kg)",
       origin: "Guntur & Coastal AP",
@@ -61,7 +61,7 @@ export default function CommoditiesShowcase({
       category: "oils",
       name: "Refined Sunflower Oil (Commercial)",
       variety: "Fortified with Vitamin A & D",
-      image: "/commodities/sunflower-oil.jpg",
+      image: "/commodities/sunflower-oil.png?v=2",
       packaging: "15 Litre Industrial Tin / Jar",
       minOrder: "20 Tins (300 Litres)",
       origin: "Kakinada Port Refineries",
@@ -70,7 +70,7 @@ export default function CommoditiesShowcase({
       category: "spices",
       name: "Guntur Stemless Dry Red Chilli",
       variety: "Teja / Sannam 334 Commercial",
-      image: "/commodities/red-chilli.jpg",
+      image: "/commodities/red-chilli.png?v=2",
       packaging: "25 kg & 40 kg Jute Bales",
       minOrder: "2 Quintals (200 kg)",
       origin: "Guntur Market Yard",
@@ -79,7 +79,7 @@ export default function CommoditiesShowcase({
       category: "spices",
       name: "Whole Cumin Seeds (Jeera)",
       variety: "Machine Cleaned 99% Purity",
-      image: "/commodities/cumin-seeds.jpg",
+      image: "/commodities/cumin-seeds.jpg?v=2",
       packaging: "25 kg HDPE Bags with Liner",
       minOrder: "1 Quintal (100 kg)",
       origin: "Regional Mandi Hubs",
@@ -88,7 +88,7 @@ export default function CommoditiesShowcase({
       category: "staples",
       name: "Grade M-30 Commercial Sugar",
       variety: "Refined White Sparkling Crystals",
-      image: "/commodities/sugar-m30.jpg",
+      image: "/commodities/sugar-m30.jpg?v=2",
       packaging: "50 kg Standard PP Bags",
       minOrder: "10 Quintals (1,000 kg)",
       origin: "Cooperative Sugar Mills",
@@ -97,7 +97,7 @@ export default function CommoditiesShowcase({
       category: "staples",
       name: "Commercial Atta & Maida Bulk",
       variety: "Industrial Roller Flour Mill Grade",
-      image: "/commodities/atta-maida.jpg",
+      image: "/commodities/atta-maida.jpg?v=2",
       packaging: "50 kg Heavy Duty Bags",
       minOrder: "5 Quintals (500 kg)",
       origin: "Regional Flour Mills",
@@ -110,19 +110,19 @@ export default function CommoditiesShowcase({
       : commodities.filter((c) => c.category === activeCategory);
 
   return (
-    <section id="commodities" className="py-20 bg-slate-50 border-b border-slate-200/80">
+    <section id="commodities" className="py-12 sm:py-16 bg-slate-50 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div className="max-w-2xl space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold uppercase tracking-wider">
               Bulk Commodity Portfolio
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Loose &amp; Unbranded Commercial Formats
             </h2>
-            <p className="text-sm sm:text-base text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-600">
               Procured directly from agricultural processing mills and agro clusters across Andhra Pradesh and Telangana. Wholesale pricing is displayed exclusively to verified accounts.
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function CommoditiesShowcase({
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs font-medium no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-6 text-xs font-medium no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -153,55 +153,56 @@ export default function CommoditiesShowcase({
           ))}
         </div>
 
-        {/* Commodity Cards Grid with Bulk Stock Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Commodity Cards Grid with Compact 3x3 Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {filtered.map((item, idx) => (
             <div
               key={idx}
-              className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-blue-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-blue-400 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Bulk Stock Image with Origin Tag */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                {/* Compact Product Image with Origin Tag */}
+                <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
+                    unoptimized
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                   
                   {/* Floating Origin Tag */}
-                  <span className="absolute bottom-2.5 left-3 text-[11px] font-medium bg-black/65 text-white backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
+                  <span className="absolute bottom-2 left-2.5 text-[10px] font-medium bg-black/70 text-white backdrop-blur-md px-2 py-0.5 rounded border border-white/10">
                     {item.origin}
                   </span>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-5 pb-2">
-                  <h3 className="text-base font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors">
+                {/* Card Content - Compact */}
+                <div className="p-3.5 pb-1.5">
+                  <h3 className="text-sm font-bold text-slate-900 leading-snug group-hover:text-blue-600 transition-colors line-clamp-1">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-blue-600 font-medium mt-0.5">
+                  <p className="text-[11px] text-blue-600 font-medium mt-0.5 truncate">
                     {item.variety}
                   </p>
 
-                  {/* Clean 2-Column Specs Grid */}
-                  <div className="grid grid-cols-2 gap-2 mt-4 text-xs">
-                    <div className="bg-slate-50 rounded-xl p-2.5 border border-slate-100">
-                      <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-medium">
+                  {/* Clean 2-Column Compact Specs */}
+                  <div className="grid grid-cols-2 gap-1.5 mt-2.5 text-[11px]">
+                    <div className="bg-slate-50 rounded-lg p-2 border border-slate-100">
+                      <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-semibold">
                         Packaging
                       </span>
-                      <strong className="text-slate-800 text-xs font-semibold block mt-0.5 truncate">
+                      <strong className="text-slate-800 text-[11px] font-semibold block mt-0.5 truncate">
                         {item.packaging}
                       </strong>
                     </div>
-                    <div className="bg-slate-50 rounded-xl p-2.5 border border-slate-100">
-                      <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-medium">
+                    <div className="bg-slate-50 rounded-lg p-2 border border-slate-100">
+                      <span className="text-[9px] text-slate-500 uppercase tracking-wider block font-semibold">
                         Min Order Lot
                       </span>
-                      <strong className="text-slate-800 text-xs font-semibold block mt-0.5 truncate">
+                      <strong className="text-slate-800 text-[11px] font-semibold block mt-0.5 truncate">
                         {item.minOrder}
                       </strong>
                     </div>
@@ -210,17 +211,17 @@ export default function CommoditiesShowcase({
               </div>
 
               {/* Card Footer: Gated Pricing Notice */}
-              <div className="px-5 py-3.5 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between text-xs mt-3">
-                <span className="text-slate-500 italic text-[11px] flex items-center gap-1.5">
-                  <Lock className="w-3 h-3 text-slate-400" />
+              <div className="px-3.5 py-2 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between text-[11px] mt-2">
+                <span className="text-slate-500 italic text-[10px] flex items-center gap-1">
+                  <Lock className="w-2.5 h-2.5 text-slate-400" />
                   Wholesale Gated
                 </span>
                 <button
                   onClick={onOpenApply}
-                  className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 cursor-pointer transition-colors"
+                  className="text-[11px] font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 cursor-pointer transition-colors"
                 >
                   Verify to Order
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3 h-3" />
                 </button>
               </div>
             </div>
