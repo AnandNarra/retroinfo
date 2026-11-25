@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   FileText,
   UserCheck,
@@ -11,237 +11,163 @@ import {
   Clock,
 } from "lucide-react";
 
-export default function OnboardingMechanism({ onOpenApply }: { onOpenApply?: () => void }) {
-  const [activeStage, setActiveStage] = useState(0);
-
+export default function OnboardingMechanism() {
   const stages = [
     {
+      step: "01",
       stageNumber: "Stage I",
       title: "Digital Portal Application",
-      badge: "Self-Service Submission (15 mins)",
-      icon: <FileText className="w-6 h-6 text-blue-600" />,
-      tagline: "Primary Store Credentials & Documentation",
+      badge: "15 Mins",
+      badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
+      iconBg: "bg-blue-50 text-blue-600",
+      icon: <FileText className="w-5 h-5" />,
       description:
-        "The retail storekeeper submits their primary shop credentials, location coordinates, business license, and historical trade data through our website portal.",
-      checklist: [
-        "Store Name, Proprietor Identity & Phone Authentication",
-        "Geographic GPS location coordinates in AP or Telangana",
-        "GSTIN Number & Municipal Trade Registration Certificate",
-        "Previous 6 months aggregate grocery procurement statements",
+        "Submit primary store credentials, geographic GPS coordinates, GSTIN, and municipal trade license through our online portal.",
+      checkpoints: [
+        "Proprietor Phone & Identity Auth",
+        "GSTIN & Municipal Trade License",
+        "GPS Store Location in AP / TS",
       ],
-      turnaround: "Instant Submission confirmation with Unique Token",
+      sla: "Instant Token Generation",
     },
     {
+      step: "02",
       stageNumber: "Stage II",
-      title: "In-Person Physical Store Inspection",
-      badge: "On-Ground Verification (24-48 hrs)",
-      icon: <UserCheck className="w-6 h-6 text-amber-600" />,
-      tagline: "Field Verification Officer Visit",
+      title: "In-Person Store Inspection",
+      badge: "24–48 Hrs",
+      badgeColor: "bg-amber-50 text-amber-700 border-amber-200",
+      iconBg: "bg-amber-50 text-amber-600",
+      icon: <UserCheck className="w-5 h-5" />,
       description:
-        "An assigned Retro Infotech field verification officer visits the applicant's physical commercial storefront to inspect premise permanence, commercial signboard display, operational stocking capacity, and business vintage.",
-      checklist: [
-        "Premise Permanence check (Owned / Registered Lease agreement)",
-        "Commercial Signboard display & active customer walk-in inspection",
-        "Operational dry stocking storage capacity (minimum pallet space)",
-        "Proof of uninterrupted continuous retail operations (min. 2 years)",
+        "An assigned Retro Infotech field officer visits the physical commercial storefront to inspect premise permanence, signboard, and stocking capacity.",
+      checkpoints: [
+        "Commercial Signboard & Walk-in Check",
+        "Owned / Registered Lease Verification",
+        "Dry Stocking & Pallet Storage Space",
       ],
-      turnaround: "Field Officer visit scheduled within 48 business hours",
+      sla: "Officer Visit within 48 Hrs",
     },
     {
+      step: "03",
       stageNumber: "Stage III",
       title: "Financial & Statutory Audit",
-      badge: "Compliance Desk Review (24 hrs)",
-      icon: <Building className="w-6 h-6 text-indigo-600" />,
-      tagline: "Turnover & Regulatory Validation",
+      badge: "24 Hrs",
+      badgeColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
+      iconBg: "bg-indigo-50 text-indigo-600",
+      icon: <Building className="w-5 h-5" />,
       description:
-        "Our compliance desk examines GST filing status, active municipal trade licenses, and past banking transaction statements to validate continuous commercial turnover requirements.",
-      checklist: [
-        "Verification of active GSTIN status & clean filing history",
-        "Validation of ₹25 Lakhs+ monthly turnover benchmark via bank statements",
-        "Municipal shop establishment statutory license check",
-        "Proprietor PAN & commercial credit suitability check",
+        "Our compliance desk validates active GSTIN filing history, municipal trade status, and past banking transaction turnover benchmarks.",
+      checkpoints: [
+        "Active GSTIN & Clean Filing Track",
+        "₹25L+ Monthly Turnover Validation",
+        "Proprietor PAN & Commercial Credit",
       ],
-      turnaround: "Automated GST validation & Risk desk clearance",
+      sla: "Automated Risk Desk Clearance",
     },
     {
+      step: "04",
       stageNumber: "Stage IV",
       title: "Authorized Account Activation",
-      badge: "Credential Issuance & Access",
-      icon: <KeyRound className="w-6 h-6 text-emerald-600" />,
-      tagline: "Wholesale Portal Gateway Unlocked",
+      badge: "Instant",
+      badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
+      iconBg: "bg-emerald-50 text-emerald-600",
+      icon: <KeyRound className="w-5 h-5" />,
       description:
-        "Upon formal clearance by our verification executive and branch management, authenticated B2B procurement credentials are provided to the storekeeper.",
-      checklist: [
-        "Formal clearance issued by Branch Management & Verification Lead",
-        "Issuance of secure encrypted login credentials & storekeeper ID",
-        "Instant access to live wholesale pricing & volume price tiers",
-        "Dedicated Relationship Manager assigned for scheduled doorstep supply",
+        "Upon branch sign-off, encrypted B2B procurement credentials and a dedicated relationship manager are issued to unlock live wholesale price books.",
+      checkpoints: [
+        "Encrypted Login Credentials & Store ID",
+        "Live Wholesale Price Books Unlocked",
+        "Dedicated Logistics Account Manager",
       ],
-      turnaround: "Instant portal access upon executive branch sign-off",
+      sla: "Immediate Portal Gateway Access",
     },
   ];
 
   return (
-    <section id="onboarding" className="py-20 bg-white border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section id="verification" className="py-14 sm:py-20 bg-white border-b border-slate-200/80">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
-            Employee-Assisted Verification
+        {/* Section Header */}
+        <div className="max-w-2xl mx-auto text-center space-y-2.5 mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold uppercase tracking-wider border border-blue-100">
+            <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
+            <span>Closed Gated Network</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
             Four-Tier Mandatory Onboarding Pipeline
           </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
-            Unlike open public e-commerce websites, Retro Infotech maintains a closed, gated commercial trading network. No retailer can view wholesale pricing or place orders without undergoing on-ground verification.
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Wholesale pricing and direct-from-mill supply are exclusive to verified physical storefronts. All 4 verification stages must be completed prior to order placement.
           </p>
         </div>
 
-        {/* Desktop Step Progression Bar */}
-        <div className="hidden lg:grid grid-cols-4 gap-4 mb-10">
+        {/* Unified 4-Step Pipeline Grid: 2 Columns Mobile / 4 Columns Desktop (2/4 Layout) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5">
           {stages.map((stg, i) => (
-            <button
+            <div
               key={i}
-              onClick={() => setActiveStage(i)}
-              className={`p-5 rounded-2xl border text-left transition-all ${
-                activeStage === i
-                  ? "bg-blue-50/60 border-blue-500 shadow-sm ring-1 ring-blue-500/20"
-                  : "bg-white border-slate-200 hover:border-slate-300"
-              }`}
+              className="relative bg-white rounded-xl sm:rounded-2xl border border-slate-200/90 p-3 sm:p-5 hover:border-blue-400 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-                  {stg.stageNumber}
-                </span>
-                <span
-                  className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    activeStage === i
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-100 text-slate-500"
-                  }`}
-                >
-                  {i + 1}
-                </span>
-              </div>
-              <h3 className="text-sm font-bold text-slate-900 leading-snug">
-                {stg.title}
-              </h3>
-              <p className="text-xs text-slate-500 mt-1 line-clamp-1">
-                {stg.tagline}
-              </p>
-            </button>
-          ))}
-        </div>
+              <div>
+                {/* Step Header */}
+                <div className="flex items-center justify-between gap-1 mb-2.5 sm:mb-3.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] sm:text-xs font-mono font-bold text-slate-400">
+                      {stg.step}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                      {stg.stageNumber}
+                    </span>
+                  </div>
+                  <span
+                    className={`text-[8px] sm:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded-full border truncate ${stg.badgeColor}`}
+                  >
+                    {stg.badge}
+                  </span>
+                </div>
 
-        {/* Active Stage Detailed Card */}
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-7 space-y-5">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wider">
-                  {stages[activeStage].stageNumber}
-                </span>
-                <span className="text-xs font-semibold text-slate-600 bg-white border border-slate-200 px-3 py-1 rounded-full">
-                  {stages[activeStage].badge}
-                </span>
-              </div>
+                {/* Icon & Title */}
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-2.5">
+                  <div
+                    className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl ${stg.iconBg} flex items-center justify-center shrink-0 [&>svg]:w-3.5 [&>svg]:h-3.5 sm:[&>svg]:w-5 sm:[&>svg]:h-5`}
+                  >
+                    {stg.icon}
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug line-clamp-2">
+                    {stg.title}
+                  </h3>
+                </div>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                {stages[activeStage].title}
-              </h3>
-
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                {stages[activeStage].description}
-              </p>
-
-              {/* Checklist */}
-              <div className="space-y-2.5 pt-2">
-                <p className="text-xs font-bold text-slate-800 uppercase tracking-wide">
-                  Key Verification Checkpoints:
+                {/* Description */}
+                <p className="text-[10px] sm:text-xs text-slate-600 leading-relaxed mb-2.5 sm:mb-4 line-clamp-3 sm:line-clamp-none">
+                  {stg.description}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {stages[activeStage].checklist.map((item, idx) => (
+
+                {/* Checkpoints */}
+                <div className="space-y-1 sm:space-y-1.5 pt-2 sm:pt-3 border-t border-slate-100">
+                  <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-slate-400 block mb-0.5">
+                    Checkpoints:
+                  </span>
+                  {stg.checkpoints.map((cp, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2 text-xs text-slate-700 bg-white p-2.5 rounded-xl border border-slate-200/80"
+                      className="flex items-start gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] text-slate-700 leading-tight"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                      <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span className="line-clamp-2 sm:line-clamp-none">{cp}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Turnaround Box */}
-              <div className="flex items-center gap-2 text-xs text-slate-600 bg-blue-50/70 border border-blue-100 p-3 rounded-xl">
-                <Clock className="w-4 h-4 text-blue-600 shrink-0" />
-                <span>
-                  <strong>Standard SLA:</strong> {stages[activeStage].turnaround}
+              {/* SLA Footer */}
+              <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-slate-100 flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[10px] text-slate-500">
+                <Clock className="w-3 h-3 text-blue-600 shrink-0" />
+                <span className="truncate">
+                  <strong className="text-slate-700">SLA:</strong> {stg.sla}
                 </span>
               </div>
             </div>
-
-            {/* Right side prompt */}
-            <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 space-y-5">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
-                  {stages[activeStage].icon}
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900">
-                    Gated Network Integrity
-                  </h4>
-                  <p className="text-xs text-slate-500">
-                    Zero retail pricing leakages
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-600 leading-relaxed">
-                By requiring an authorized on-ground field personnel visit, Retro Infotech ensures that genuine wholesale commercial pricing remains exclusive to qualifying physical storefronts.
-              </p>
-
-              <div className="pt-2 border-t border-slate-100 space-y-3">
-                <button
-                  onClick={onOpenApply}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 text-white font-semibold text-xs hover:bg-blue-700 transition-colors shadow-xs"
-                >
-                  <ShieldCheck className="w-4 h-4 text-blue-200" />
-                  <span>Initiate Stage I Application</span>
-                </button>
-
-                <div className="flex items-center justify-between text-xs text-slate-500 pt-1">
-                  <span>Questions about field visits?</span>
-                  <a
-                    href="tel:+918555020890"
-                    className="font-medium text-blue-600 hover:underline"
-                  >
-                    +91 8555020890
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-        {/* Mobile Stage Selector Switcher */}
-        <div className="lg:hidden mt-6 flex justify-between gap-2">
-          {stages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveStage(i)}
-              className={`flex-1 py-2 text-xs font-semibold rounded-lg border text-center ${
-                activeStage === i
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "bg-white text-slate-700 border-slate-200"
-              }`}
-            >
-              Stage {i + 1}
-            </button>
           ))}
         </div>
 

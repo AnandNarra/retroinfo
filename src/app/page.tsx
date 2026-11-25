@@ -26,7 +26,7 @@ export default function Home() {
         <CommoditiesShowcase onOpenApply={() => setIsApplyModalOpen(true)} />
 
         {/* 4-Tier Field Verification & Onboarding Pipeline */}
-        <OnboardingMechanism onOpenApply={() => setIsApplyModalOpen(true)} />
+        <OnboardingMechanism />
 
         {/* Contact Desk & Registered Office Details */}
         <ContactSection />
