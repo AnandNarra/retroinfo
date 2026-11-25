@@ -29,7 +29,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
@@ -44,10 +44,10 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* Left Column: Office Details & Hubs */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             {/* Primary Registered Office Card */}
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4">
               <div className="flex items-center gap-3">
@@ -84,20 +84,20 @@ export default function ContactSection() {
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-amber-500 shrink-0" />
                   <a
-                    href="tel:+918555020890"
+                    href="tel:+919121404929"
                     className="hover:text-blue-600 font-medium transition-colors"
                   >
-                    +91 8555020890
+                    +91 9121404929
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-blue-600 shrink-0" />
                   <a
-                    href="mailto:retroinfotechpersonal@gmail.com"
+                    href="mailto:retroinfotech1@gmail.com"
                     className="hover:text-blue-600 font-medium transition-colors break-all"
                   >
-                    retroinfotechpersonal@gmail.com
+                    retroinfotech1@gmail.com
                   </a>
                 </div>
 
@@ -174,7 +174,6 @@ export default function ContactSection() {
                     <input
                       required
                       type="text"
-                      placeholder="e.g., G. Nanda Kishore"
                       value={formData.name}
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
@@ -190,7 +189,6 @@ export default function ContactSection() {
                     <input
                       required
                       type="tel"
-                      placeholder="+91 8555020890"
                       value={formData.phone}
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
@@ -207,7 +205,7 @@ export default function ContactSection() {
                     </label>
                     <input
                       type="text"
-                      placeholder="e.g., Kirana Supermarket"
+
                       value={formData.storeName}
                       onChange={(e) =>
                         setFormData({ ...formData, storeName: e.target.value })
@@ -223,7 +221,7 @@ export default function ContactSection() {
                     <input
                       required
                       type="text"
-                      placeholder="e.g., Vijayawada"
+
                       value={formData.city}
                       onChange={(e) =>
                         setFormData({ ...formData, city: e.target.value })
@@ -239,7 +237,7 @@ export default function ContactSection() {
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Specify commodity volumes (e.g. Sona Masoori 50 Quintals, Toor Dal 20 Quintals) or question about field KYC visit..."
+
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })

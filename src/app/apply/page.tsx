@@ -482,7 +482,6 @@ export default function ApplyPage() {
                         <input
                           required
                           type="text"
-                          placeholder="e.g., G. Nanda Kishore"
                           value={formData.ownerName}
                           onChange={(e) =>
                             setFormData({

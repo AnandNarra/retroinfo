@@ -162,7 +162,7 @@ export default function RetailerApplicationModal({
                   <div className="flex items-start gap-2">
                     <span className="font-bold text-blue-600">1.</span>
                     <span>
-                      An authorized Retro Infotech <strong>Field Verification Officer</strong> will contact you at <strong>{formData.mobile || "+91 8555020890"}</strong> within 24-48 business hours to confirm store inspection.
+                      An authorized Retro Infotech <strong>Field Verification Officer</strong> will contact you at <strong>{formData.mobile || "+91 9121404929"}</strong> within 24-48 business hours to confirm store inspection.
                     </span>
                   </div>
                   <div className="flex items-start gap-2">

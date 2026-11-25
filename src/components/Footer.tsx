@@ -64,18 +64,18 @@ export default function Footer() {
             </div>
             <div className="pt-2 space-y-2 text-xs">
               <a
-                href="tel:+918555020890"
+                href="tel:+919121404929"
                 className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-amber-500" />
-                <span>+91 8555020890</span>
+                <span>+91 9121404929</span>
               </a>
               <a
-                href="mailto:retroinfotechpersonal@gmail.com"
+                href="mailto:retroinfotech1@gmail.com"
                 className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors break-all"
               >
                 <Mail className="w-3.5 h-3.5 text-blue-500" />
-                <span>retroinfotechpersonal@gmail.com</span>
+                <span>retroinfotech1@gmail.com</span>
               </a>
             </div>
           </div>
@@ -121,14 +121,22 @@ export default function Footer() {
             <div className="space-y-2 text-xs sm:text-sm">
               <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
                 <p className="font-semibold text-slate-900 text-xs">
-                  Executive Directors
+                  Founder & Directors
                 </p>
-                <p className="text-slate-600 text-xs mt-1">
-                  • Gajula Venkata Nanda Kishore (Director)
-                </p>
-                <p className="text-slate-600 text-xs">
-                  • Kakarlapudi Pallavi (Director)
-                </p>
+                <div className="mt-1.5 space-y-1 text-xs">
+                  <p className="text-slate-800 font-medium">
+                    • Naru Naga Venkata Charan Kumar{" "}
+                    <span className="text-slate-500 font-normal">
+                      (Founder & Director)
+                    </span>
+                  </p>
+                  <p className="text-slate-600">
+                    • Gajula Venkata Nanda Kishore (Director)
+                  </p>
+                  <p className="text-slate-600">
+                    • Kakarlapudi Pallavi (Director)
+                  </p>
+                </div>
               </div>
 
               <p className="text-[11px] text-slate-600 leading-tight pt-2">
